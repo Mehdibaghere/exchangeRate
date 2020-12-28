@@ -1,5 +1,6 @@
 package mehdi.example.exchange.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import mehdi.example.exchange.srvices.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ public class ExchangeController {
     private SalaryService salaryService;
 
     @GetMapping("calculate-nett")
-    double calculateNettSalaryInPLN(@RequestParam double grossDaily, @RequestParam String currency) {
+    double calculateNettSalaryInPLN(@RequestParam double grossDaily, @RequestParam String currency) throws JsonProcessingException {
 
         System.out.println("Gross daily is: " + grossDaily);
         System.out.println("Currency: " + currency);
