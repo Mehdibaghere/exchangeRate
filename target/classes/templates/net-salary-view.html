@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Nett salary view</title>
+    <link rel="stylesheet"
+          href="/webjars/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<main>
+    <div class="container-fluid">
+        <h1 class="title">Nett salary calculated</h1>
+        <div class="card col-md-6">
+            <div class="card-body">
+
+                <p>Input params</p>
+
+                <ul>
+                    <li>daily rate: <span th:text="${grossDaily}"></span></li>
+                    <li>currency: <span th:text="${currency}"></span></li>
+                </ul>
+                <h3><span th:text="${#numbers.formatDecimal(nettSalary,1,'WHITESPACE', 2, 'COMMA')}"></span> PLN</h3>
+            </div>
+        </div>
+        <a href="/">Calculate again</a>
+    </div>
+</main>
+
+
+</body>
+</html>
