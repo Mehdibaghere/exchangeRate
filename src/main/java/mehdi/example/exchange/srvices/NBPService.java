@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class NBPService {
     private static String NBP_URL = "http://api.nbp.pl/api/exchangerates/rates/A/";
-    private static String NBP_ARG = "/today?format=json";
+    private static String NBP_ARG = "/last?format=json";
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
 
